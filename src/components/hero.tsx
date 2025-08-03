@@ -31,7 +31,7 @@ export default function Hero() {
                 </h1>
                 <div className="h-16 flex items-center">
                     <p className="text-2xl text-primary font-semibold md:text-3xl">
-                       <StaggeredFadeIn text="Your Vision, Engineered." />
+                       <StaggeredFadeIn text="Crafting Scalable Web & App Experiences" />
                     </p>
                 </div>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
