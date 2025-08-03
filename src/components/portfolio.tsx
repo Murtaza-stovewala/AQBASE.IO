@@ -5,32 +5,38 @@ const projects = [
   {
     name: "Taj Collection",
     category: "E-commerce",
-    dataAiHint: "clothing store"
+    dataAiHint: "clothing store",
+    url: "https://tajcollection.vercel.app/"
   },
   {
     name: "Gift Shop",
     category: "Gifting Shop",
-    dataAiHint: "gift shop"
+    dataAiHint: "gift shop",
+    url: "#"
   },
   {
     name: "Maakirasoi",
     category: "Restaurant Website",
-    dataAiHint: "restaurant food"
+    dataAiHint: "restaurant food",
+    url: "https://maakirasoi-ebon.vercel.app/"
   },
   {
     name: "FitnessFlow",
     category: "Gym Website",
-    dataAiHint: "gym fitness"
+    dataAiHint: "gym fitness",
+    url: "https://fitnessflow-gym.vercel.app/"
   },
   {
     name: "AB Home Solutions",
     category: "Home Solutions",
-    dataAiHint: "home interior"
+    dataAiHint: "home interior",
+    url: "https://abhomesolution.vercel.app/"
   },
   {
     name: "Creative Agency",
     category: "Website",
-    dataAiHint: "creative agency"
+    dataAiHint: "creative agency",
+    url: "#"
   }
 ];
 
@@ -49,22 +55,24 @@ export default function Portfolio() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2">
-              <CardContent className="p-0">
-                <Image
-                  src={`https://placehold.co/600x400.png`}
-                  alt={`Screenshot of ${project.name}`}
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-auto aspect-video transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={project.dataAiHint}
-                />
-                <div className="p-4 bg-card">
-                  <h3 className="text-lg font-bold font-headline">{project.name}</h3>
-                  <p className="text-sm text-muted-foreground">{project.category}</p>
-                </div>
-              </CardContent>
-            </Card>
+            <a href={project.url} target="_blank" rel="noopener noreferrer" key={index} className="group">
+              <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2 cursor-pointer">
+                <CardContent className="p-0">
+                  <Image
+                    src={`https://placehold.co/600x400.png`}
+                    alt={`Screenshot of ${project.name}`}
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-auto aspect-video transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint={project.dataAiHint}
+                  />
+                  <div className="p-4 bg-card">
+                    <h3 className="text-lg font-bold font-headline">{project.name}</h3>
+                    <p className="text-sm text-muted-foreground">{project.category}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
           ))}
         </div>
       </div>
