@@ -46,7 +46,7 @@ export default function Contact() {
     }, [state, toast]);
 
     return (
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-card/50">
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
             <div className="container px-4 md:px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     <div className="space-y-4">
