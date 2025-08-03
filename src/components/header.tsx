@@ -2,10 +2,9 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, CodeXml } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Image from 'next/image';
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -22,7 +21,13 @@ export default function Header() {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.split('?')[0];
-    document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.querySelector(targetId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    } else if (href ==='#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth'});
+    }
+
 
     if(isMobile) {
       setIsOpen(false);
@@ -49,7 +54,8 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
           <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
-            <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase.io Logo" width={120} height={30} objectFit="contain" />
+            <CodeXml className="h-6 w-6 text-primary" />
+            <span className="font-bold text-lg">Aqbase.io</span>
           </a>
         </div>
         {isMobile ? (
