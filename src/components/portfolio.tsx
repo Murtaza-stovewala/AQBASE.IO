@@ -12,7 +12,7 @@ const projects = [
     name: "Gift Shop",
     category: "Gifting Shop",
     dataAiHint: "gift shop",
-    url: "#"
+    url: "https://giftshop-blond.vercel.app/"
   },
   {
     name: "Maakirasoi",
