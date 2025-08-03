@@ -1,21 +1,24 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Code, Smartphone, PenTool } from "lucide-react";
+import { Code, Smartphone, ShoppingCart } from "lucide-react";
 
 const services = [
   {
-    icon: <Code className="h-10 w-10 text-primary" />,
-    title: "Web Development",
-    description: "From custom marketing sites to complex e-commerce platforms and CMS-driven solutions, we build fast, secure, and scalable websites."
+    icon: <Code className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
+    title: "Web Design & Development",
+    description: "Building modern, fast & responsive websites tailored for your needs.",
+    delay: "0",
   },
   {
-    icon: <Smartphone className="h-10 w-10 text-primary" />,
+    icon: <ShoppingCart className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
+    title: "E-commerce Solutions",
+    description: "Custom online stores with payment integration & smooth UX.",
+    delay: "100",
+  },
+  {
+    icon: <Smartphone className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
     title: "App Development",
-    description: "We design and develop native and cross-platform mobile applications for iOS and Android that deliver seamless user experiences."
-  },
-  {
-    icon: <PenTool className="h-10 w-10 text-primary" />,
-    title: "UI/UX Design",
-    description: "Our human-centric design process focuses on creating intuitive, engaging, and beautiful interfaces that your users will love."
+    description: "Cross-platform apps designed for performance & great usability.",
+    delay: "200",
   }
 ];
 
@@ -34,15 +37,22 @@ export default function Services() {
         </div>
         <div className="grid gap-8 md:grid-cols-3">
           {services.map((service, index) => (
-            <Card key={index} className="flex flex-col items-center text-center p-6 bg-background hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
-              <CardHeader className="items-center">
-                {service.icon}
-                <CardTitle className="mt-4 text-2xl font-headline">{service.title}</CardTitle>
-              </CardHeader>
-              <CardDescription className="text-base text-muted-foreground">
-                {service.description}
-              </CardDescription>
-            </Card>
+            <div 
+              key={index}
+              className="group"
+              data-aos="fade-up"
+              data-aos-delay={service.delay}
+            >
+              <Card className="flex flex-col items-center text-center p-6 bg-background rounded-xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                <CardHeader className="items-center">
+                  {service.icon}
+                  <CardTitle className="text-xl font-semibold text-primary mb-2">{service.title}</CardTitle>
+                </CardHeader>
+                <CardDescription className="text-gray-600 text-sm">
+                  {service.description}
+                </CardDescription>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
