@@ -17,7 +17,7 @@ export default function Hero() {
                 </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="hover:text-primary-foreground">
                 <a href="#contact">Book a Free Consultation</a>
               </Button>
             </div>

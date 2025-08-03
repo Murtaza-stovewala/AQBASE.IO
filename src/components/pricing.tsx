@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
+import Link from 'next/link';
 
 const packages = [
   {
@@ -76,8 +77,8 @@ export default function Pricing() {
                 </ul>
               </CardContent>
               <CardFooter>
-                 <Button asChild className="w-full" variant={pkg.isPopular ? "default" : "outline"}>
-                   <a href="#contact">{pkg.buttonText}</a>
+                 <Button asChild className="w-full hover:text-primary-foreground" variant={pkg.isPopular ? "default" : "outline"}>
+                   <Link href={`#contact?package=${pkg.name.toLowerCase()}`}>{pkg.buttonText}</Link>
                  </Button>
               </CardFooter>
             </Card>

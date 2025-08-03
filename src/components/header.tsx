@@ -2,9 +2,10 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { CodeXml, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from 'next/image';
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -20,7 +21,9 @@ export default function Header() {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    const targetId = href.split('?')[0];
+    document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+
     if(isMobile) {
       setIsOpen(false);
     }
@@ -46,8 +49,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
           <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
-            <CodeXml className="h-6 w-6 text-primary" />
-            <span className="font-bold text-lg font-headline">Aqbase.io</span>
+            <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase.io Logo" width={130} height={40} />
           </a>
         </div>
         {isMobile ? (
@@ -61,7 +63,7 @@ export default function Header() {
               <SheetContent side="right">
                 <nav className="flex flex-col items-start space-y-4 pt-8">
                   <NavItems />
-                   <Button asChild className="w-full mt-4">
+                   <Button asChild className="w-full mt-4 hover:text-primary-foreground">
                     <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
                   </Button>
                 </nav>
@@ -74,7 +76,7 @@ export default function Header() {
               <NavItems />
             </nav>
             <div className="flex items-center space-x-4">
-              <Button asChild>
+              <Button asChild className="hover:text-primary-foreground">
                 <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
               </Button>
             </div>

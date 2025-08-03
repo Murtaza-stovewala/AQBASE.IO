@@ -5,6 +5,7 @@ import { z } from "zod";
 const contactFormSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters."),
     email: z.string().email("Please enter a valid email address."),
+    package: z.string().min(1, "Please select a package."),
     message: z.string().min(10, "Message must be at least 10 characters long."),
 });
 
@@ -37,6 +38,7 @@ export async function submitContactForm(
     console.log("New contact form submission:");
     console.log("Name:", parsed.data.name);
     console.log("Email:", parsed.data.email);
+    console.log("Package:", parsed.data.package);
     console.log("Message:", parsed.data.message);
 
     return { message: "Thank you for your message! We will get back to you shortly." };

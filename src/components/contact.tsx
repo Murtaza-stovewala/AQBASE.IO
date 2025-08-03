@@ -2,7 +2,8 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from 'next/navigation';
 import { submitContactForm, type ContactFormState } from "@/lib/actions";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 
 function SubmitButton() {
@@ -22,11 +24,21 @@ function SubmitButton() {
 }
 
 export default function Contact() {
+    const searchParams = useSearchParams();
     const { toast } = useToast();
     const formRef = useRef<HTMLFormElement>(null);
+    const [selectedPackage, setSelectedPackage] = useState(searchParams.get('package') || 'not-specified');
+    
     const initialState: ContactFormState = { message: "" };
     const [state, formAction] = useActionState(submitContactForm, initialState);
     
+    useEffect(() => {
+        const pkg = searchParams.get('package');
+        if (pkg) {
+            setSelectedPackage(pkg);
+        }
+    }, [searchParams]);
+
     useEffect(() => {
         if (state.message) {
             if (state.issues) {
@@ -41,9 +53,14 @@ export default function Contact() {
                     description: state.message,
                 });
                  formRef.current?.reset();
+                 setSelectedPackage('not-specified');
             }
         }
     }, [state, toast]);
+    
+    const handlePackageChange = (value: string) => {
+        setSelectedPackage(value);
+    };
 
     return (
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
@@ -77,13 +94,27 @@ export default function Contact() {
                         </CardHeader>
                         <CardContent>
                             <form ref={formRef} action={formAction} className="space-y-4">
-                                <div className="space-y-2">
+                                 <div className="space-y-2">
                                     <Label htmlFor="name">Name</Label>
                                     <Input id="name" name="name" placeholder="Your Name" required />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="email">Email</Label>
                                     <Input id="email" name="email" type="email" placeholder="your@email.com" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="package">Package</Label>
+                                    <Select name="package" value={selectedPackage} onValueChange={handlePackageChange} required>
+                                        <SelectTrigger id="package">
+                                            <SelectValue placeholder="Select a package" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="not-specified">General Inquiry</SelectItem>
+                                            <SelectItem value="base">Base</SelectItem>
+                                            <SelectItem value="standard">Standard</SelectItem>
+                                            <SelectItem value="premium">Premium</SelectItem>
+                                        </SelectContent>
+                                    </Select>
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="message">Project Details</Label>
