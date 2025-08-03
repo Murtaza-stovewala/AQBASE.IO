@@ -2,23 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 
-const StaggeredFadeIn = ({ text }: { text: string }) => {
-  return (
-      <span className="inline-block">
-          {text.split('').map((char, index) => (
-              <span
-                  key={index}
-                  className="animate-fade-in-up inline-block"
-                  style={{ animationDelay: `${index * 0.05}s`, animationFillMode: 'both' }}
-              >
-                  {char === ' ' ? '\u00A0' : char}
-              </span>
-          ))}
-      </span>
-  );
-};
-
-
 export default function Hero() {
   return (
     <section id="home" className="w-full py-20 md:py-32 lg:py-40 bg-card/50">
@@ -29,11 +12,6 @@ export default function Hero() {
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 font-headline">
                     Building the Future of Digital Experiences
                 </h1>
-                <div className="h-16 flex items-center">
-                    <p className="text-2xl text-primary font-semibold md:text-3xl">
-                       <StaggeredFadeIn text="Crafting Scalable Web & App Experiences" />
-                    </p>
-                </div>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     We are Aqbase, a dedicated team of developers and designers creating high-performance websites and mobile apps that drive growth for startups and enterprises.
                 </p>
