@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from 'next/image';
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -67,7 +68,10 @@ export default function Portfolio() {
                     data-ai-hint={project.dataAiHint}
                   />
                   <div className="p-4 bg-card">
-                    <h3 className="text-lg font-bold font-headline">{project.name}</h3>
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-lg font-bold font-headline">{project.name}</h3>
+                      <ExternalLink className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
+                    </div>
                     <p className="text-sm text-muted-foreground">{project.category}</p>
                   </div>
                 </CardContent>
