@@ -49,7 +49,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
           <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
-            <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase.io Logo" width={130} height={40} />
+            <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase.io Logo" width={120} height={30} objectFit="contain" />
           </a>
         </div>
         {isMobile ? (
