@@ -2,9 +2,10 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, CodeXml } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from 'next/image';
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -54,7 +55,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
           <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
-            <CodeXml className="h-6 w-6 text-primary" />
+            <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase logo" width={24} height={24} className="h-6 w-6" />
             <span className="font-bold text-lg">Aqbase.io</span>
           </a>
         </div>
