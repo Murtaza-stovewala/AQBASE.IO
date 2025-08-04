@@ -22,7 +22,7 @@ export default function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  To empower businesses by transforming their innovative ideas into market-ready digital solutions.
+                  
                 </p>
               </CardContent>
             </Card>
