@@ -1,7 +1,8 @@
 'use server';
 
 import { z } from 'zod';
-import { sendEmail } from '@/ai/flows/send-email-flow';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -35,32 +36,18 @@ export async function submitContactForm(
     };
   }
 
-  // In a real app, you would send an email or save to a CRM here.
-  console.log('New contact form submission:');
-  console.log('Name:', parsed.data.name);
-  console.log('Email:', parsed.data.email);
-  console.log('Package:', parsed.data.package);
-  console.log('Message:', parsed.data.message);
-
   try {
-    await sendEmail({
-      from: 'onboarding@resend.dev',
-      to: 'delivered@resend.dev', // CHANGE THIS to your email
-      subject: `New Inquiry from ${parsed.data.name} - ${parsed.data.package} Package`,
-      html: `
-        <p><strong>Name:</strong> ${parsed.data.name}</p>
-        <p><strong>Email:</strong> ${parsed.data.email}</p>
-        <p><strong>Package:</strong> ${parsed.data.package}</p>
-        <p><strong>Message:</strong></p>
-        <p>${parsed.data.message}</p>
-      `,
+    await addDoc(collection(db, 'inquiries'), {
+      ...parsed.data,
+      createdAt: serverTimestamp(),
     });
+
     return { message: 'Thank you for your message! We will get back to you shortly.' };
   } catch (e) {
     console.error(e);
     return {
       message: 'There was an error sending your message. Please try again later.',
-      issues: ['Email sending failed.'],
+      issues: ['Database operation failed.'],
     };
   }
 }
