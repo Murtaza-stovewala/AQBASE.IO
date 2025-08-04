@@ -45,10 +45,10 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <Card className="bg-background/80 backdrop-blur-sm p-6">
+        <Card className="bg-background/80 backdrop-blur-sm p-6 rounded-xl">
           <CardHeader className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-card px-3 py-1 text-sm text-primary">Our Work</div>
+              <div className="inline-block rounded-full bg-card px-3 py-1 text-sm text-primary">Our Work</div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Featured Projects</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 We're proud of the work we do. Here are some of our favorite projects we've launched for our clients.
@@ -67,7 +67,7 @@ export default function Portfolio() {
                   data-aos="fade-up"
                   data-aos-delay={`${index * 100}`}
                   >
-                  <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2 cursor-pointer bg-card">
+                  <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2 cursor-pointer bg-card rounded-xl">
                     <CardContent className="p-0">
                       <Image
                         src={`https://placehold.co/600x400.png`}

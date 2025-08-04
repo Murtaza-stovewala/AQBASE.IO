@@ -92,7 +92,7 @@ export default function Contact() {
             <div className="container px-4 md:px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     <div className="space-y-4">
-                         <div className="inline-block rounded-lg bg-card px-3 py-1 text-sm text-primary">Contact Us</div>
+                         <div className="inline-block rounded-full bg-card px-3 py-1 text-sm text-primary">Contact Us</div>
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">Ready to Build?</h2>
                         <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
                             Have a project in mind or just want to learn more about our process? We'd love to hear from you. Fill out the form or reach out to us directly.
@@ -112,7 +112,7 @@ export default function Contact() {
                             </div>
                         </div>
                     </div>
-                    <Card className="bg-background">
+                    <Card className="bg-background rounded-xl">
                         <CardHeader>
                             <CardTitle>Get in Touch</CardTitle>
                             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>

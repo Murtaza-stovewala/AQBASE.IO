@@ -23,7 +23,7 @@ export default function About() {
                 className="rounded-xl shadow-2xl object-cover w-full h-full"
                 data-ai-hint="team collaboration"
               />
-              <Card className="absolute -bottom-8 -right-8 w-64 bg-background/80 backdrop-blur-sm shadow-lg">
+              <Card className="absolute -bottom-8 -right-8 w-64 bg-background/80 backdrop-blur-sm shadow-lg rounded-xl">
                 <CardHeader>
                   <CardTitle className="text-lg font-headline">Agile. Insight-Driven. <br /> Human-Centric</CardTitle>
                 </CardHeader>
