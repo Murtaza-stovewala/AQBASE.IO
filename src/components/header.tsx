@@ -46,7 +46,7 @@ export default function Header() {
           key={link.href}
           href={link.href}
           onClick={(e) => handleLinkClick(e, link.href)}
-          className={`text-base font-medium transition-colors hover:text-primary ${activeLink === link.href ? 'text-primary font-semibold' : 'text-primary'}`}
+          className={`text-base font-medium transition-colors p-2 rounded-md hover:bg-accent/20 ${activeLink === link.href ? 'text-primary font-semibold' : 'text-primary'}`}
         >
           {link.label}
         </a>
