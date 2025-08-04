@@ -18,7 +18,7 @@ export default function About() {
             />
             <Card className="absolute -bottom-8 -right-8 w-64 bg-background/80 backdrop-blur-sm shadow-lg">
               <CardHeader>
-                <CardTitle className="text-lg font-headline">Our Mission</CardTitle>
+                <CardTitle className="text-lg font-headline">Agile. Insight-Driven. <br /> Human-Centric</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
