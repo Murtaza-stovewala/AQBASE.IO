@@ -18,17 +18,21 @@ const navLinks = [
 export default function Header() {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = React.useState(false);
+  const [activeLink, setActiveLink] = React.useState('#home');
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    setActiveLink(href);
     const targetId = href.split('?')[0];
-    const element = document.querySelector(targetId);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    } else if (href ==='#home') {
+    
+    if (targetId === '#home') {
         window.scrollTo({ top: 0, behavior: 'smooth'});
+    } else {
+        const element = document.querySelector(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     }
-
 
     if(isMobile) {
       setIsOpen(false);
@@ -42,7 +46,7 @@ export default function Header() {
           key={link.href}
           href={link.href}
           onClick={(e) => handleLinkClick(e, link.href)}
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          className={`text-sm font-medium transition-colors hover:text-primary ${activeLink === link.href ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
         >
           {link.label}
         </a>
@@ -51,9 +55,9 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container flex h-16 items-center">
-        <div className="mr-4 flex items-center">
+        <div className="mr-auto flex items-center">
           <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
             <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase logo" width={24} height={24} className="h-6 w-6" />
             <span className="font-bold text-lg">Aqbase.io</span>
@@ -70,7 +74,7 @@ export default function Header() {
               <SheetContent side="right">
                 <nav className="flex flex-col items-start space-y-4 pt-8">
                   <NavItems />
-                   <Button asChild className="w-full mt-4 hover:text-primary-foreground">
+                   <Button asChild className="w-full mt-4">
                     <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
                   </Button>
                 </nav>
@@ -79,11 +83,11 @@ export default function Header() {
           </div>
         ) : (
           <>
-            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1">
+            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
               <NavItems />
             </nav>
-            <div className="flex items-center space-x-4">
-              <Button asChild className="hover:text-primary-foreground">
+            <div className="flex items-center space-x-4 ml-6">
+              <Button asChild className="shadow-sm hover:scale-105 transition-transform duration-300">
                 <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
               </Button>
             </div>
