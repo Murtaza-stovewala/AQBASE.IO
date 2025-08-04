@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import { VantaBackground } from "@/components/vanta-background";
 
 export default function Hero() {
   const handleSeeOurWorkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -14,8 +15,9 @@ export default function Hero() {
   };
   
   return (
-    <section id="home" className="w-full py-20 md:py-32 lg:py-40 bg-secondary overflow-hidden">
-      <div className="container px-4 md:px-6">
+    <section id="home" className="w-full py-20 md:py-32 lg:py-40 bg-secondary overflow-hidden relative">
+       <VantaBackground />
+      <div className="container px-4 md:px-6 z-10 relative">
         <div className="flex flex-col items-center justify-center text-center">
           <div 
             className="flex flex-col justify-center space-y-6"
