@@ -11,7 +11,7 @@ declare global {
 
 const services = [
   {
-    icon: <Code className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
+    icon: <dotlottie-wc src="https://lottie.host/5d5c1285-7341-4651-9c7e-34a629494e01/sXHKLFOcz0.lottie" style={{ width: '100%', height: '140px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
     title: "Web Design & Development",
     description: "Building modern, fast & responsive websites tailored for your needs.",
     delay: "0",
