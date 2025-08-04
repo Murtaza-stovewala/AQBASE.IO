@@ -9,7 +9,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative" data-aos="fade-right">
             <Image 
-              src="https://placehold.co/800x600.png"
+              src="https://i.ibb.co/kswxbjHN/AQBASE-1.png"
               alt="Our team collaborating"
               width={800}
               height={600}
