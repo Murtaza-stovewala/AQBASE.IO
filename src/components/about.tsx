@@ -35,7 +35,7 @@ export default function About() {
              Our Philosophy
             </Badge>
             <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight font-headline">
-              Agile. Insight-Driven. <br /> Human-Centric.
+              Crafting Scalable Web <br /> & App Experiences
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
               At Aqbase, we don’t just build software — we build partnerships.  
