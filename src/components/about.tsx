@@ -7,33 +7,35 @@ export default function About() {
     <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative" data-aos="fade-right">
-            <Image 
-              src="https://i.ibb.co/kswxbjHN/AQBASE-1.png"
-              alt="Our team collaborating"
-              width={800}
-              height={600}
-              className="rounded-xl shadow-2xl object-cover w-full h-full"
-              data-ai-hint="team collaboration"
-            />
-            <Card className="absolute -bottom-8 -right-8 w-64 bg-background/80 backdrop-blur-sm shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-headline">Agile. Insight-Driven. <br /> Human-Centric</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="space-y-6" data-aos="fade-left">
-             <Badge 
+          <div className="relative flex flex-col items-center" data-aos="fade-right">
+            <Badge 
               variant="outline" 
-              className="text-sm py-1 px-4 rounded-full self-center border-primary/30 bg-card text-primary"
+              className="text-sm py-1 px-4 rounded-full self-center border-primary/30 bg-card text-primary mb-4"
             >
              Our Philosophy
             </Badge>
+            <div className="relative w-full">
+              <Image 
+                src="https://i.ibb.co/kswxbjHN/AQBASE-1.png"
+                alt="Our team collaborating"
+                width={800}
+                height={600}
+                className="rounded-xl shadow-2xl object-cover w-full h-full"
+                data-ai-hint="team collaboration"
+              />
+              <Card className="absolute -bottom-8 -right-8 w-64 bg-background/80 backdrop-blur-sm shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-lg font-headline">Agile. Insight-Driven. <br /> Human-Centric</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          <div className="space-y-6" data-aos="fade-left">
             <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight font-headline">
               Crafting Scalable Web <br /> & App Experiences
             </h3>
