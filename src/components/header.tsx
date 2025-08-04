@@ -56,37 +56,34 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container flex h-16 items-center">
-        <div className="mr-auto flex items-center">
-          <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
-            <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase logo" width={24} height={24} className="h-6 w-6" />
-            <span className="font-bold text-lg">Aqbase.io</span>
-          </a>
-        </div>
+      <div className="container flex h-16 items-center justify-between">
+        <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
+          <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase logo" width={24} height={24} className="h-6 w-6" />
+          <span className="font-bold text-lg">Aqbase.io</span>
+        </a>
+
         {isMobile ? (
-          <div className="flex-1 flex justify-end">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col items-start space-y-4 pt-8">
+                <NavItems />
+                 <Button asChild className="w-full mt-4">
+                  <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right">
-                <nav className="flex flex-col items-start space-y-4 pt-8">
-                  <NavItems />
-                   <Button asChild className="w-full mt-4">
-                    <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         ) : (
           <>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
               <NavItems />
             </nav>
-            <div className="flex items-center space-x-4 ml-6">
+            <div className="flex items-center">
               <Button asChild className="shadow-sm hover:scale-105 transition-transform duration-300">
                 <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
               </Button>
