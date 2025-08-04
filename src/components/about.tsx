@@ -1,13 +1,25 @@
 export default function About() {
   return (
     <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <div className="container mx-auto px-6 md:px-8 text-center">
+        <div className="flex flex-col items-center max-w-5xl mx-auto">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-card px-3 py-1 text-sm text-primary">Our Philosophy</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Agile, Insight-Driven, and Human-Centric</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              At Aqbase, we don't just build software; we build partnerships. Our mission is to transform your vision into a market-ready product that captivates users and drives business results. We believe in a collaborative, agile process where your insights guide our development, ensuring the final product is not only technically excellent but also perfectly aligned with your goals. Our values of transparency, craftsmanship, and continuous improvement are at the core of everything we do.
+            <h2 className="text-sm uppercase tracking-wider text-primary font-semibold">
+              Our Philosophy
+            </h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-foreground mt-3 leading-tight">
+              Agile. Insight-Driven. <br className="hidden md:block" /> Human-Centric.
+            </h3>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              At Aqbase, we don’t just build software — we build partnerships.  
+              Our mission: transform your vision into a market-ready product that connects with users and delivers results.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              We collaborate closely, using an agile process where your ideas guide development. The result? Software that’s technically sound and truly aligned with your goals.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Transparency. Craftsmanship. Constant Improvement.  
+              These aren’t buzzwords — they’re our way of working.
             </p>
           </div>
         </div>
