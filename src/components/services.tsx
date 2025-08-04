@@ -17,7 +17,7 @@ const services = [
     delay: "0",
   },
   {
-    icon: <ShoppingCart className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
+    icon: <dotlottie-wc src="https://lottie.host/04c17c12-730b-421d-9f5e-294953267d00/TR5fGKv6bI.lottie" style={{ width: '100%', height: '140px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
     title: "E-commerce Solutions",
     description: "Custom online stores with payment integration & smooth UX.",
     delay: "100",
