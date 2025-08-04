@@ -1,6 +1,14 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Code, Smartphone, ShoppingCart, ShieldCheck } from "lucide-react";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'dotlottie-wc': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { src: string; style: React.CSSProperties; speed: string; autoplay: boolean; loop: boolean; }, HTMLElement>;
+    }
+  }
+}
+
 const services = [
   {
     icon: <Code className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
@@ -21,7 +29,7 @@ const services = [
     delay: "200",
   },
   {
-    icon: <ShieldCheck className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
+    icon: <dotlottie-wc src="https://lottie.host/01902b79-fc2a-4068-ba08-6dd5c44e39f6/lkURLJTqG6.lottie" style={{ width: '80px', height: '80px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
     title: "Ongoing Support & Maintenance",
     description: "Reliable support and maintenance to keep your application running smoothly.",
     delay: "300",
