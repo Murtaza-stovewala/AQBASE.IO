@@ -56,8 +56,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container flex h-16 items-center justify-between">
-        <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
+      <div className="container flex h-16 items-center px-4 md:px-6">
+        <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center gap-2 mr-6">
           <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase logo" width={24} height={24} className="h-6 w-6" />
           <span className="font-bold text-lg">Aqbase.io</span>
         </a>
@@ -65,7 +65,7 @@ export default function Header() {
         {isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+               <Button variant="ghost" size="icon" className="ml-auto">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -80,10 +80,10 @@ export default function Header() {
           </Sheet>
         ) : (
           <>
-            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium mx-auto">
               <NavItems />
             </nav>
-            <div className="flex items-center">
+            <div className="flex items-center ml-6">
               <Button asChild className="shadow-sm hover:scale-105 transition-transform duration-300">
                 <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
               </Button>
