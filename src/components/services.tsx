@@ -23,7 +23,7 @@ const services = [
     delay: "100",
   },
   {
-    icon: <Smartphone className="h-24 w-24 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
+    icon: <dotlottie-wc src="https://lottie.host/43f52ebe-e4f3-4468-bcfe-1295b0c8609c/HxtiTfAPKe.lottie" style={{ width: '100%', height: '160px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
     title: "App Development",
     description: "Cross-platform apps designed for performance & great usability.",
     delay: "200",
