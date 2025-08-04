@@ -46,7 +46,7 @@ export default function Header() {
           key={link.href}
           href={link.href}
           onClick={(e) => handleLinkClick(e, link.href)}
-          className={`text-sm font-medium transition-colors hover:text-primary ${activeLink === link.href ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+          className={`text-base font-medium transition-colors hover:text-primary ${activeLink === link.href ? 'text-primary font-semibold' : 'text-primary'}`}
         >
           {link.label}
         </a>
@@ -83,7 +83,7 @@ export default function Header() {
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium mx-auto">
               <NavItems />
             </nav>
-            <div className="flex items-center ml-6">
+            <div className="flex items-center ml-auto">
               <Button asChild className="shadow-sm hover:scale-105 transition-transform duration-300">
                 <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Book a Consultation</a>
               </Button>
