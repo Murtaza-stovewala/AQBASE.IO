@@ -29,7 +29,7 @@ const services = [
     delay: "200",
   },
   {
-    icon: <dotlottie-wc src="https://lottie.host/01902b79-fc2a-4068-ba08-6dd5c44e39f6/lkURLJTqG6.lottie" style={{ width: '120px', height: '120px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
+    icon: <dotlottie-wc src="https://lottie.host/01902b79-fc2a-4068-ba08-6dd5c44e39f6/lkURLJTqG6.lottie" style={{ width: '100%', height: '140px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
     title: "Ongoing Support & Maintenance",
     description: "Reliable support and maintenance to keep your application running smoothly.",
     delay: "300",
@@ -58,7 +58,7 @@ export default function Services() {
               data-aos-delay={service.delay}
             >
               <Card className="flex flex-col items-center text-center p-6 bg-background rounded-xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
-                <CardHeader className="items-center">
+                <CardHeader className="items-center w-full">
                   {service.icon}
                   <CardTitle className="text-xl font-semibold text-primary mb-2">{service.title}</CardTitle>
                 </CardHeader>
