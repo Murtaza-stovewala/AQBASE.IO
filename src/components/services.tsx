@@ -29,7 +29,7 @@ const services = [
     delay: "200",
   },
   {
-    icon: <dotlottie-wc src="https://lottie.host/01902b79-fc2a-4068-ba08-6dd5c44e39f6/lkURLJTqG6.lottie" style={{ width: '80px', height: '80px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
+    icon: <dotlottie-wc src="https://lottie.host/01902b79-fc2a-4068-ba08-6dd5c44e39f6/lkURLJTqG6.lottie" style={{ width: '120px', height: '120px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
     title: "Ongoing Support & Maintenance",
     description: "Reliable support and maintenance to keep your application running smoothly.",
     delay: "300",
