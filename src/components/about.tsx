@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { VantaBackground } from "./vanta-background";
 
 export default function About() {
   return (
-    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-      <div className="container mx-auto px-6 md:px-8">
+    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-secondary relative overflow-hidden">
+       <VantaBackground />
+      <div className="container mx-auto px-6 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative flex flex-col items-center" data-aos="fade-right">
             <Badge 

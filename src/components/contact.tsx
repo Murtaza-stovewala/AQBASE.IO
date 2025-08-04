@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MessageCircle } from "lucide-react";
+import { VantaBackground } from "./vanta-background";
 
 function SubmitButton() {
     const { pending } = useFormStatus();
@@ -88,8 +89,9 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-            <div className="container px-4 md:px-6">
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-secondary relative overflow-hidden">
+            <VantaBackground />
+            <div className="container px-4 md:px-6 relative z-10">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     <div className="space-y-4">
                          <div className="inline-block rounded-lg bg-card px-3 py-1 text-sm text-primary">Contact Us</div>
