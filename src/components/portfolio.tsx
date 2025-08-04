@@ -11,41 +11,44 @@ const projects = [
     dataAiHint: "clothing store",
     url: "https://tajcollection.vercel.app/"
   },
+  
+  
+  
   {
     name: "Gift Shop",
     category: "Gifting Shop",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://i.ibb.co/Qj608tcM/GIFT-SHOP.png",
     dataAiHint: "gift shop",
     url: "https://giftshop-blond.vercel.app/"
   },
   {
     name: "Maakirasoi",
     category: "Restaurant Website",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://i.ibb.co/BKqq811q/MAA-KI-RASOI.png",
     dataAiHint: "restaurant food",
     url: "https://maakirasoi-ebon.vercel.app/"
   },
   {
     name: "FitnessFlow",
     category: "Gym Website",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://i.ibb.co/jZ1D5RY6/FITNESS-FLOW.png",
     dataAiHint: "gym fitness",
     url: "https://fitnessflow-gym.vercel.app/"
   },
   {
     name: "AB Home Solutions",
     category: "Home Solutions",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://i.ibb.co/Tx45rFQw/AB-HOME-SOLUTION.png",
     dataAiHint: "home interior",
     url: "https://abhomesolution.vercel.app/"
   },
-  {
+ /* {
     name: "Creative Agency",
     category: "Website",
     imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "creative agency",
     url: "#"
-  }
+  }*/
 ];
 
 export default function Portfolio() {
