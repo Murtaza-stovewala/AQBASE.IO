@@ -7,36 +7,42 @@ const projects = [
   {
     name: "Taj Collection",
     category: "E-commerce",
+    imageUrl: "https://i.ibb.co/NnJXQ0tV/TAJ-MARKETPLACE.png",
     dataAiHint: "clothing store",
     url: "https://tajcollection.vercel.app/"
   },
   {
     name: "Gift Shop",
     category: "Gifting Shop",
+    imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "gift shop",
     url: "https://giftshop-blond.vercel.app/"
   },
   {
     name: "Maakirasoi",
     category: "Restaurant Website",
+    imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "restaurant food",
     url: "https://maakirasoi-ebon.vercel.app/"
   },
   {
     name: "FitnessFlow",
     category: "Gym Website",
+    imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "gym fitness",
     url: "https://fitnessflow-gym.vercel.app/"
   },
   {
     name: "AB Home Solutions",
     category: "Home Solutions",
+    imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "home interior",
     url: "https://abhomesolution.vercel.app/"
   },
   {
     name: "Creative Agency",
     category: "Website",
+    imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "creative agency",
     url: "#"
   }
@@ -71,7 +77,7 @@ export default function Portfolio() {
                   <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2 cursor-pointer bg-card rounded-xl">
                     <CardContent className="p-0">
                       <Image
-                        src={`https://placehold.co/600x400.png`}
+                        src={project.imageUrl}
                         alt={`Screenshot of ${project.name}`}
                         width={600}
                         height={400}
