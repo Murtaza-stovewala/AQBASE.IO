@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Code, Smartphone, ShoppingCart, ShieldCheck } from "lucide-react";
 
 declare global {
@@ -38,37 +38,41 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+    <section id="services" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-card px-3 py-1 text-sm text-primary">Our Services</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">What We Do Best</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              We offer a comprehensive suite of services to bring your digital products to life, from initial concept to launch and beyond.
-            </p>
-          </div>
-        </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="group"
-              data-aos="fade-up"
-              data-aos-delay={service.delay}
-            >
-              <Card className="flex flex-col items-center text-center p-6 bg-background rounded-xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
-                <CardHeader className="items-center w-full">
-                  {service.icon}
-                  <CardTitle className="text-xl font-semibold text-primary mb-2">{service.title}</CardTitle>
-                </CardHeader>
-                <CardDescription className="text-gray-600 text-sm">
-                  {service.description}
-                </CardDescription>
-              </Card>
+        <Card className="bg-background/80 backdrop-blur-sm">
+          <CardHeader className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="space-y-2">
+              <div className="inline-block rounded-lg bg-card px-3 py-1 text-sm text-primary">Our Services</div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">What We Do Best</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                We offer a comprehensive suite of services to bring your digital products to life, from initial concept to launch and beyond.
+              </p>
             </div>
-          ))}
-        </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {services.map((service, index) => (
+                <div 
+                  key={index}
+                  className="group"
+                  data-aos="fade-up"
+                  data-aos-delay={service.delay}
+                >
+                  <Card className="flex flex-col items-center text-center p-6 bg-card rounded-xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                    <CardHeader className="items-center w-full">
+                      {service.icon}
+                      <CardTitle className="text-xl font-semibold text-primary mb-2">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardDescription className="text-gray-600 text-sm">
+                      {service.description}
+                    </CardDescription>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
