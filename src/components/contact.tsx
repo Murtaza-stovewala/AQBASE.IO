@@ -1,10 +1,7 @@
 "use client";
 
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from 'next/navigation';
-import { submitContactForm, type ContactFormState } from "@/lib/actions";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,10 +13,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MessageCircle } from "lucide-react";
 
 function SubmitButton() {
-    const { pending } = useFormStatus();
+    // const { pending } = useFormStatus(); // This is for useActionState
     return (
-        <Button type="submit" className="w-full" disabled={pending}>
-            {pending ? "Sending..." : "Send Message"}
+        <Button type="submit" className="w-full">
+            Send Message
         </Button>
     );
 }
@@ -29,9 +26,6 @@ export default function Contact() {
     const { toast } = useToast();
     const formRef = useRef<HTMLFormElement>(null);
     const [selectedPackage, setSelectedPackage] = useState('not-specified');
-    
-    const initialState: ContactFormState = { message: "" };
-    const [state, formAction] = useActionState(submitContactForm, initialState);
     
     useEffect(() => {
         const setPackageFromUrl = () => {
@@ -55,28 +49,6 @@ export default function Contact() {
         };
     }, []);
 
-    useEffect(() => {
-        if (state.message) {
-            if (state.issues) {
-                 toast({
-                    title: "Oops! Something went wrong.",
-                    description: state.issues.join(", "),
-                    variant: "destructive",
-                });
-            } else {
-                 toast({
-                    title: "Success!",
-                    description: state.message,
-                });
-                 formRef.current?.reset();
-                 setSelectedPackage('not-specified');
-                 const url = new URL(window.location.href);
-                 url.searchParams.delete('package');
-                 window.history.pushState({}, '', url);
-            }
-        }
-    }, [state, toast]);
-    
     const handlePackageChange = (value: string) => {
         setSelectedPackage(value);
          const url = new URL(window.location.href);
@@ -86,6 +58,15 @@ export default function Contact() {
             url.searchParams.set('package', value);
         }
         window.history.pushState({}, '', url);
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        toast({
+            title: "Form submitted!",
+            description: "This is a placeholder. The form doesn't do anything yet.",
+        });
+        formRef.current?.reset();
     };
 
     return (
@@ -119,7 +100,7 @@ export default function Contact() {
                             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <form ref={formRef} action={formAction} className="space-y-4">
+                            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                                  <div className="space-y-2">
                                     <Label htmlFor="name">Name</Label>
                                     <Input id="name" name="name" placeholder="Your Name" required />
