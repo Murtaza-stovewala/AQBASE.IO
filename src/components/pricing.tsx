@@ -58,9 +58,10 @@ export default function Pricing() {
     e.preventDefault();
     const contactSection = document.querySelector("#contact");
     const url = new URL(window.location.href);
-    url.searchParams.set('package', packageName);
+    url.searchParams.set('package', packageName.toLowerCase());
+    
+    // This makes sure the contact form component re-renders with the new URL parameter
     window.history.pushState({}, '', url);
-
     const event = new PopStateEvent('popstate');
     window.dispatchEvent(event);
 
