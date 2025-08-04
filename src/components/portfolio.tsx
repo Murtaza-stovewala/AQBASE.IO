@@ -56,7 +56,15 @@ export default function Portfolio() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <a href={project.url} target="_blank" rel="noopener noreferrer" key={index} className="group">
+            <a 
+              href={project.url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              key={index} 
+              className="group"
+              data-aos="fade-up"
+              data-aos-delay={`${index * 100}`}
+              >
               <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2 cursor-pointer">
                 <CardContent className="p-0">
                   <Image
