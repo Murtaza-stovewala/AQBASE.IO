@@ -14,12 +14,12 @@ export default function About() {
             >
              Our Philosophy
             </Badge>
-            <div className="relative w-full">
+            <div className="relative w-full max-w-md mx-auto">
               <Image 
                 src="https://i.ibb.co/kswxbjHN/AQBASE-1.png"
                 alt="Our team collaborating"
-                width={800}
-                height={600}
+                width={400}
+                height={400}
                 className="rounded-xl shadow-2xl object-cover w-full h-full"
                 data-ai-hint="team collaboration"
               />
