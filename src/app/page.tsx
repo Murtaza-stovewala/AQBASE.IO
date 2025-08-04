@@ -7,6 +7,7 @@ import Pricing from '@/components/pricing';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import { VantaBackground } from '@/components/vanta-background';
+import { Suspense } from 'react';
 
 export default function Home() {
   return (
@@ -20,7 +21,9 @@ export default function Home() {
           <Services />
           <Pricing />
           <Portfolio />
-          <Contact />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Contact />
+          </Suspense>
         </main>
         <Footer />
       </div>
