@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -52,6 +54,21 @@ const packages = [
 ];
 
 export default function Pricing() {
+  const handlePackageSelect = (e: React.MouseEvent<HTMLAnchorElement>, packageName: string) => {
+    e.preventDefault();
+    const contactSection = document.querySelector("#contact");
+    const url = new URL(window.location.href);
+    url.searchParams.set('package', packageName);
+    window.history.pushState({}, '', url);
+
+    const event = new PopStateEvent('popstate');
+    window.dispatchEvent(event);
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
       <div className="container px-4 md:px-6">
@@ -92,7 +109,7 @@ export default function Pricing() {
                 </CardContent>
                 <CardFooter>
                    <Button asChild className="w-full hover:text-primary-foreground" variant={pkg.isPopular ? "default" : "outline"}>
-                     <Link href={`#contact?package=${pkg.name.toLowerCase()}`}>{pkg.buttonText}</Link>
+                     <a href={`#contact?package=${pkg.name.toLowerCase()}`} onClick={(e) => handlePackageSelect(e, pkg.name.toLowerCase())}>{pkg.buttonText}</a>
                    </Button>
                 </CardFooter>
               </Card>

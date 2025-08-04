@@ -27,17 +27,32 @@ export default function Contact() {
     const searchParams = useSearchParams();
     const { toast } = useToast();
     const formRef = useRef<HTMLFormElement>(null);
-    const [selectedPackage, setSelectedPackage] = useState(searchParams.get('package') || 'not-specified');
+    const [selectedPackage, setSelectedPackage] = useState('not-specified');
     
     const initialState: ContactFormState = { message: "" };
     const [state, formAction] = useActionState(submitContactForm, initialState);
     
     useEffect(() => {
-        const pkg = searchParams.get('package');
-        if (pkg) {
-            setSelectedPackage(pkg);
-        }
-    }, [searchParams]);
+        const setPackageFromUrl = () => {
+            const pkg = new URLSearchParams(window.location.search).get('package');
+            if (pkg && ['base', 'standard', 'premium'].includes(pkg)) {
+                setSelectedPackage(pkg);
+            } else {
+                 setSelectedPackage('not-specified');
+            }
+        };
+
+        setPackageFromUrl();
+
+        const handleUrlChange = () => {
+            setPackageFromUrl();
+        };
+
+        window.addEventListener('popstate', handleUrlChange);
+        return () => {
+            window.removeEventListener('popstate', handleUrlChange);
+        };
+    }, []);
 
     useEffect(() => {
         if (state.message) {
@@ -54,12 +69,22 @@ export default function Contact() {
                 });
                  formRef.current?.reset();
                  setSelectedPackage('not-specified');
+                 const url = new URL(window.location.href);
+                 url.searchParams.delete('package');
+                 window.history.pushState({}, '', url);
             }
         }
     }, [state, toast]);
     
     const handlePackageChange = (value: string) => {
         setSelectedPackage(value);
+         const url = new URL(window.location.href);
+        if (value === 'not-specified') {
+             url.searchParams.delete('package');
+        } else {
+            url.searchParams.set('package', value);
+        }
+        window.history.pushState({}, '', url);
     };
 
     return (
