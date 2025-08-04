@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Code, Smartphone, ShoppingCart } from "lucide-react";
+import { Code, Smartphone, ShoppingCart, ShieldCheck } from "lucide-react";
 
 const services = [
   {
@@ -19,6 +19,12 @@ const services = [
     title: "App Development",
     description: "Cross-platform apps designed for performance & great usability.",
     delay: "200",
+  },
+  {
+    icon: <ShieldCheck className="h-20 w-20 mb-4 text-primary transition-transform duration-500 group-hover:scale-110" />,
+    title: "Ongoing Support & Maintenance",
+    description: "Reliable support and maintenance to keep your application running smoothly.",
+    delay: "300",
   }
 ];
 
@@ -35,7 +41,7 @@ export default function Services() {
             </p>
           </div>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <div 
               key={index}
