@@ -75,7 +75,7 @@ export default function Pricing() {
         <Card className="bg-background/80 backdrop-blur-sm p-6 rounded-xl">
           <CardHeader className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-full bg-card px-3 py-1 text-sm text-primary">Pricing Plans</div>
+              <Badge variant="outline" className="text-sm py-1 px-4 rounded-full self-center border-primary/30 bg-card text-primary">Pricing Plans</Badge>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Flexible Pricing for Every Stage</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Choose the perfect plan to match your project's needs. We offer transparent pricing with no hidden fees.

@@ -11,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 
@@ -92,7 +93,7 @@ export default function Contact() {
             <div className="container px-4 md:px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     <div className="space-y-4">
-                         <div className="inline-block rounded-full bg-card px-3 py-1 text-sm text-primary">Contact Us</div>
+                         <Badge variant="outline" className="text-sm py-1 px-4 rounded-full self-center border-primary/30 bg-card text-primary">Contact Us</Badge>
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">Ready to Build?</h2>
                         <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
                             Have a project in mind or just want to learn more about our process? We'd love to hear from you. Fill out the form or reach out to us directly.

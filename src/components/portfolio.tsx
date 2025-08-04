@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from 'next/image';
+import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 
 const projects = [
@@ -48,7 +49,7 @@ export default function Portfolio() {
         <Card className="bg-background/80 backdrop-blur-sm p-6 rounded-xl">
           <CardHeader className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-full bg-card px-3 py-1 text-sm text-primary">Our Work</div>
+              <Badge variant="outline" className="text-sm py-1 px-4 rounded-full self-center border-primary/30 bg-card text-primary">Our Work</Badge>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Featured Projects</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 We're proud of the work we do. Here are some of our favorite projects we've launched for our clients.
