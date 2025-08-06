@@ -16,7 +16,7 @@ export default function Contact() {
                         <div className="space-y-4 pt-4">
                             <div className="flex items-center gap-4">
                                 <Mail className="h-6 w-6 text-primary" />
-                                <a href="mailto:hello@aqbase.io" className="text-lg hover:underline">hello@aqbase.io</a>
+                                <a href="mailto:murtzastove@gmail.com" className="text-lg hover:underline">murtzastove@gmail.com</a>
                             </div>
                             <div className="flex items-center gap-4">
                                 <Phone className="h-6 w-6 text-primary" />
