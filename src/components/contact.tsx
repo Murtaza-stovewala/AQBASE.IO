@@ -20,11 +20,11 @@ export default function Contact() {
                             </div>
                             <div className="flex items-center gap-4">
                                 <Phone className="h-6 w-6 text-primary" />
-                                <a href="tel:+1234567890" className="text-lg hover:underline">+1 (234) 567-890</a>
+                                <a href="tel:+919111525376" className="text-lg hover:underline">+91 91115-25376</a>
                             </div>
                              <div className="flex items-center gap-4">
                                 <MessageCircle className="h-6 w-6 text-primary" />
-                                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-lg hover:underline">Chat on WhatsApp</a>
+                                <a href="https://wa.me/917746945272" target="_blank" rel="noopener noreferrer" className="text-lg hover:underline">Chat on WhatsApp</a>
                             </div>
                         </div>
                     </div>
