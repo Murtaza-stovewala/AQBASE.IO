@@ -16,12 +16,12 @@ export default function About() {
             </Badge>
             <div className="relative w-full max-w-md mx-auto">
               <Image 
-                src="https://i.ibb.co/kswxbjHN/AQBASE-1.png"
-                alt="Our team collaborating"
+                src="https://i.ibb.co/w8wJnYb/Untitled-design-6.png"
+                alt="Aqbase Design"
                 width={400}
                 height={400}
                 className="rounded-xl shadow-2xl object-cover w-full h-full"
-                data-ai-hint="team collaboration"
+                data-ai-hint="design element"
               />
               <Card className="absolute -bottom-8 -right-8 w-64 bg-background/80 backdrop-blur-sm shadow-lg rounded-xl">
                 <CardHeader>
