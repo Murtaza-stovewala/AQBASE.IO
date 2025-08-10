@@ -24,7 +24,7 @@ const services = [
     delay: "100",
   },
   {
-    icon: <dotlottie-wc src="https://lottie.host/43f52ebe-e4f3-4468-bcfe-1295b0c8609c/HxtiTfAPKe.lottie" style={{ width: '100%', height: '160px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
+    icon: <dotlottie-wc src="https://lottie.host/5b4ababd-fa4b-49ec-b3b6-4c7751819152/2BXLsURCmc.lottie" style={{ width: '100%', height: '160px' }} speed="1" autoplay loop className="mb-4 transition-transform duration-500 group-hover:scale-110"></dotlottie-wc>,
     title: "Social Media Marketing",
     description: "Engaging campaigns to grow your brand's online presence.",
     delay: "200",
