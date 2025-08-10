@@ -16,7 +16,7 @@ export default function About() {
             </Badge>
             <div className="relative w-full max-w-md mx-auto">
               <Image 
-                src="https://i.ibb.co/w8wJnYb/Untitled-design-6.png"
+                src="https://i.ibb.co/C3rFBxWm/WITH-FREIND.png"
                 alt="Aqbase Design"
                 width={400}
                 height={400}
