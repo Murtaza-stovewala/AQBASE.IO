@@ -5,11 +5,11 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    name: "Gift Shop",
-    category: "Gifting Shop",
-    imageUrl: "https://i.ibb.co/Qj608tcM/GIFT-SHOP.png",
+    name: "Hakimi Travels",
+    category: "Tours and Travels",
+    imageUrl: "https://i.ibb.co/YFLTvYfw/image.png",
     dataAiHint: "gift shop",
-    url: "https://giftshop-blond.vercel.app/"
+    url: "https://hakimi-travels.vercel.app/"
   },
   {
     name: "Taj Collection",
