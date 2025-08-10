@@ -5,21 +5,18 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    name: "Taj Collection",
-    category: "E-commerce",
-    imageUrl: "https://i.ibb.co/NnJXQ0tV/TAJ-MARKETPLACE.png",
-    dataAiHint: "clothing store",
-    url: "https://tajcollection.vercel.app/"
-  },
-  
-  
-  
-  {
     name: "Gift Shop",
     category: "Gifting Shop",
     imageUrl: "https://i.ibb.co/Qj608tcM/GIFT-SHOP.png",
     dataAiHint: "gift shop",
     url: "https://giftshop-blond.vercel.app/"
+  },
+  {
+    name: "Taj Collection",
+    category: "E-commerce",
+    imageUrl: "https://i.ibb.co/NnJXQ0tV/TAJ-MARKETPLACE.png",
+    dataAiHint: "clothing store",
+    url: "https://tajcollection.vercel.app/"
   },
   {
     name: "Maakirasoi",
