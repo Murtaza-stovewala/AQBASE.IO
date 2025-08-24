@@ -20,7 +20,7 @@ export default function Home() {
           <About />
           <Services />
           <Pricing />
-          <Portfolio />
+          /*<Portfolio />*/
           <Suspense fallback={<div>Loading...</div>}>
             <Contact />
           </Suspense>
