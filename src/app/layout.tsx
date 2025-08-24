@@ -4,11 +4,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { AOSInit } from '@/components/aos';
 
 export const metadata: Metadata = {
-  title: 'Aqbase.io | Custom Web & App Development',
-  description: 'Aqbase is a trusted website & app development partner for businesses and startups. We build high-performance, visually appealing digital solutions that drive growth. Specializing in custom web design, e-commerce, and mobile applications.',
-  keywords: ['web development', 'app development', 'ui/ux design', 'e-commerce solutions', 'startup web design', 'custom software', 'Aqbase.io'],
+  title: 'AqBase Studio | Custom Web & App Development',
+  description: 'AqBase Studio is a trusted website & app development partner for businesses and startups. We build high-performance, visually appealing digital solutions that drive growth. Specializing in custom web design, e-commerce, and mobile applications.',
+  keywords: ['web development', 'app development', 'ui/ux design', 'e-commerce solutions', 'startup web design', 'custom software', 'AqBase Studio'],
   openGraph: {
-      title: 'Aqbase.io | Custom Web & App Development Solutions',
+      title: 'AqBase Studio | Custom Web & App Development Solutions',
       description: 'Your trusted partner for custom web and mobile app solutions. From concept to launch, we deliver scalable and beautiful digital products.',
       // In a real application, you would have a file at public/og-image.png
       // images: ['/og-image.png'] 

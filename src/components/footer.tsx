@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2 flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-               <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase logo" width={24} height={24} className="h-6 w-6" />
-              <span className="font-bold text-lg">Aqbase.io</span>
+               <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="AqBase Studio logo" width={24} height={24} className="h-6 w-6" />
+              <span className="font-bold text-lg">AqBase Studio</span>
             </Link>
             <p className="text-muted-foreground max-w-sm">
               Innovative digital solutions for businesses looking to enhance
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-border/40 mt-8 pt-6 text-center">
-          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Aqbase.io. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} AqBase Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -58,8 +58,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container flex h-16 items-center px-4 md:px-6">
         <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center gap-2 mr-6">
-          <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="Aqbase logo" width={24} height={24} className="h-6 w-6" />
-          <span className="font-bold text-lg">Aqbase.io</span>
+          <Image src="https://i.ibb.co/kswxbjHN/AQBASE-1.png" alt="AqBase Studio logo" width={24} height={24} className="h-6 w-6" />
+          <span className="font-bold text-lg">AqBase Studio</span>
         </a>
 
         {isMobile ? (
